@@ -1,10 +1,10 @@
-package com.spring.boot.user.mapper;
+package com.spring.boot.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.spring.boot.user.entity.User;
+import com.spring.boot.entity.User;
 
 @Mapper
 public interface UserMapper {

@@ -1,4 +1,4 @@
-package com.spring.boot.user.entity;
+package com.spring.boot.entity;
 
 import java.io.Serializable;
 

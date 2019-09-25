@@ -1,10 +1,10 @@
-package com.spring.boot.user.service;
+package com.spring.boot.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spring.boot.user.mapper.UserMapper;
-import com.spring.boot.user.entity.User;
+import com.spring.boot.mapper.UserMapper;
+import com.spring.boot.entity.User;
 
 import java.util.List;
 

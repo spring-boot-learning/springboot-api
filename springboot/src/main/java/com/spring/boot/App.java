@@ -14,4 +14,5 @@ public class App implements WebMvcConfigurer {
         SpringApplication.run(App.class, args);
         System.out.println("-----> start success...");
     }
+
 }

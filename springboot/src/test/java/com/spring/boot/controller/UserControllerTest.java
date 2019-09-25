@@ -1,8 +1,8 @@
-package com.spring.boot.user.controller;
+package com.spring.boot.controller;
 
 import com.google.gson.Gson;
 import com.spring.boot.App;
-import com.spring.boot.user.entity.User;
+import com.spring.boot.entity.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +15,8 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import java.util.Locale;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = App.class)
@@ -39,12 +41,13 @@ public class UserControllerTest {
         Gson gosn = new Gson();
         RequestBuilder builder = MockMvcRequestBuilders
                 .post("/user")
+                .locale(Locale.SIMPLIFIED_CHINESE)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(gosn.toJson(user));
 
         MvcResult result = mvc.perform(builder).andReturn();
-        System.out.println("追加件数：" + result.getResponse().getContentAsString());
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     @Test
@@ -56,21 +59,23 @@ public class UserControllerTest {
         Gson gosn = new Gson();
         RequestBuilder builder = MockMvcRequestBuilders
                 .put("/user/7")
+                .locale(Locale.US)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(gosn.toJson(user));
         MvcResult result = mvc.perform(builder).andReturn();
-        System.out.println("更新件数：" + result.getResponse().getContentAsString());
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     @Test
     public void testDeleteUser() throws Exception {
         RequestBuilder builder = MockMvcRequestBuilders
                 .delete("/user/7")
+                .locale(Locale.JAPAN)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON_UTF8);
         MvcResult result = mvc.perform(builder).andReturn();
-        System.out.println("删除件数：" + result.getResponse().getContentAsString());
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     @Test

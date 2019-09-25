@@ -32,12 +32,6 @@
             <version>${spring.boot.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- thymeleaf对应的starter -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <version>${spring.boot.version}</version>
-        </dependency>
         <!-- mybatis -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -84,7 +78,6 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>utf8</encoding>
-                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>
